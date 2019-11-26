@@ -279,7 +279,7 @@ public class JStravaV3 implements JStrava {
     
     @Override
     public List<Activity> getCurrentAthleteActivitiesAll() {
-	    int resultsPerPage = 30;
+	    int resultsPerPage = 200;
 	    int page = 1;
 	    List<Activity> currentActivities = new ArrayList<Activity>();
 	    List<Activity> activitiesPerPage;
@@ -323,7 +323,8 @@ public class JStravaV3 implements JStrava {
 
     @Override
     public List<Activity> getCurrentAthleteActivitiesAfterDate(long after) {
-        String URL="https://www.strava.com/api/v3/athlete/activities?after="+after;
+        int resultsPerPage = 200;
+        String URL="https://www.strava.com/api/v3/athlete/activities?after="+after+"&per_page="+resultsPerPage;
         String result=getResult(URL);
         
         Activity[] activitiesArray =gson.fromJson(result,Activity[].class);
