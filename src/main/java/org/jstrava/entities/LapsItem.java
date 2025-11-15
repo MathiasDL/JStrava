@@ -34,7 +34,7 @@ public class LapsItem{
 	private boolean deviceWatts;
 
 	@SerializedName("total_elevation_gain")
-	private int totalElevationGain;
+	private double totalElevationGain;
 
 	@SerializedName("lap_index")
 	private int lapIndex;
@@ -142,7 +142,7 @@ public class LapsItem{
 		this.totalElevationGain = totalElevationGain;
 	}
 
-	public int getTotalElevationGain(){
+	public double getTotalElevationGain(){
 		return totalElevationGain;
 	}
 
